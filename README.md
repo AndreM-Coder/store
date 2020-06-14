@@ -1,6 +1,4 @@
 # Projeto Store
-<b><h2>Projeto: Website Store</h2></b>
-
 <b>Descrição do Projeto:</b>
 <br>
 Este projeto tem como principal objetivo permitir a um certo utilizador comprar produtos da Website Store, uma loja que vende todo e qualquer tipo de produtos.
