@@ -1,18 +1,14 @@
-# Engenharia-de-Sistemas
-<b><h2>Projeto: Website Meme Generator</h2></b>
+# Projeto Store
+<b><h2>Projeto: Website Store</h2></b>
 
 <b>Descrição do Projeto:</b>
 <br>
-Este projeto tem como principal objetivo permitir a um certo utilizador criar um meme, adicionando texto por cima de uma imagem. O utilizador quando entra no website, tem um conjunto de opções no menu principal para poder aceder ás diversas áreas que o site disponibiliza.
+Este projeto tem como principal objetivo permitir a um certo utilizador comprar produtos da Website Store, uma loja que vende todo e qualquer tipo de produtos.
+Estes produtos podem ser adicionados pelo administrador da loja, desde que tem de cumpra todos os requistos obrigatorios do produto.
+Ao administrador cabe ainda tambem a gestão de utilizadores
 
-- Home
-- Create now!
-- FAQ
-- Recently Created
-- Login
-- Register
 
-<b><h3>Etapas para aceder ao projeto numa máquina local por qualquer um dos membros:</h3></b>
+<b><h3>Etapas para aceder ao projeto numa máquina local por pessoa:</h3></b>
 
 Instalar Script do Projeto:
 
