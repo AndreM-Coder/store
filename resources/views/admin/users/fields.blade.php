@@ -26,14 +26,25 @@
                     {!! Form::email('email', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group ">
+                    {!! Form::label('city', 'City:') !!}
+                    {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group ">
+                    {!! Form::label('address', 'Address:') !!}
+                    {!! Form::text('address', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group ">
+                    {!! Form::label('country', 'Country:') !!}
+                    {!! Form::text('country', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group ">
+                    {!! Form::label('contact', 'Country:') !!}
+                    {!! Form::number('contact', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group ">
                     {!! Form::label('password', 'Password:') !!}
                     {!! Form::text('password', null, ['class' => 'form-control']) !!}
                 </div>
-                {{-- <!-- Remember Token Field -->
-                <div class="form-group ">
-                    {!! Form::label('remember_token', 'Remember Token:') !!}
-                    {!! Form::text('remember_token', null, ['class' => 'form-control']) !!}
-                </div> --}}
                 <!-- Submit Field -->
                 <div class="row">
                     <!-- Submit Field -->

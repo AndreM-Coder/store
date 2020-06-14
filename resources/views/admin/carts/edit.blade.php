@@ -1,0 +1,23 @@
+@extends('admin.app')
+
+@section('content')
+    <section class="content-header">
+        <h1>
+            Cart
+        </h1>
+   </section>
+   <div class="content">
+       @include('adminlte-templates::common.errors')
+       <div class="box box-primary">
+           <div class="box-body">
+               <div class="row">
+                   {!! Form::model($cart, ['route' => ['carts.update', $cart->id], 'method' => 'patch']) !!}
+
+                        @include('admin.carts.fields')
+
+                   {!! Form::close() !!}
+               </div>
+           </div>
+       </div>
+   </div>
+@endsection

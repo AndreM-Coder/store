@@ -7,7 +7,7 @@
             <div class="box-body">
                     {!! Form::open(['route' => 'users.store']) !!}
 
-                        @include('users.fields')
+                        @include('admin.users.fields')
 
                     {!! Form::close() !!}
             </div>

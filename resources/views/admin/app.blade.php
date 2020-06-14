@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MemeGen | @yield('title')</title>
+    <title>WebStore | @yield('title')</title>
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -68,7 +68,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{asset('/')}}" class="brand-link">
-                <span class="brand-text font-weight-light ml-4">MemeGen</span>
+                <span class="brand-text font-weight-light ml-4">WebStore</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">

@@ -7,7 +7,7 @@
         <div class="box-body">
             {!! Form::open(['route' => 'pictures.store', 'files' => 'true']) !!}
 
-            @include('pictures.fields')
+            @include('admin.pictures.fields')
 
             {!! Form::close() !!}
         </div>

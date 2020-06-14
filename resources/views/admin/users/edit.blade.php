@@ -7,7 +7,7 @@
            <div class="box-body">
                    {!! Form::model($users, ['route' => ['users.update', $users->id], 'method' => 'patch']) !!}
 
-                        @include('users.fields')
+                        @include('admin.users.fields')
 
                    {!! Form::close() !!}
            </div>

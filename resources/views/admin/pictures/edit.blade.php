@@ -7,7 +7,7 @@
            <div class="box-body">
                    {!! Form::model($pictures, ['route' => ['pictures.update', $pictures->id], 'method' => 'patch', 'files' => 'true']) !!}
 
-                        @include('pictures.fields')
+                        @include('admin.pictures.fields')
 
                    {!! Form::close() !!}
            </div>

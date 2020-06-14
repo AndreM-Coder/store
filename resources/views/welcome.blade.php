@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>MemeGen</title>
+  <title>WebStore</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -160,7 +160,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="{{ url('/') }}"><span>MemeGen</span></a></h1>
+        <h1 class="text-light"><a href="{{ url('/') }}"><span>WebStore</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         
       </div>
@@ -189,7 +189,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">Create your memes with MemeGen</h1>
+          <h1 data-aos="fade-up">Create your memes with WebStore</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">A meme generator where users create their own personalize images
             easily. </h2>
           <div data-aos="fade-up" data-aos-delay="800">

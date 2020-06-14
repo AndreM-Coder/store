@@ -29,3 +29,12 @@ Route::resource('pictures', 'PicturesController')->middleware(['is_admin', 'auth
 Route::get('memes', 'PicturesController@memes')->middleware(['is_admin', 'auth'])->name('memes');
 Route::get('admin/home', 'HomeController@admin')->middleware(['is_admin', 'auth'])->name('admin-home');
 Route::resource('users', 'UsersController')->middleware(['is_admin', 'auth']);
+
+
+Route::resource('products', 'ProductsController');
+
+Route::resource('shoppings', 'ShoppingController');
+
+Route::resource('categories', 'CategoryController');
+
+Route::resource('carts', 'CartController');

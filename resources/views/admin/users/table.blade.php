@@ -17,6 +17,8 @@
                                     <th>Name</th>
                                     <th>Is Admin</th>
                                     <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -26,6 +28,8 @@
                                     <td>{{ $users->name }}</td>
                                     <td>{{ $users->isAdmin() }}</td>
                                     <td>{{ $users->email }}</td>
+                                    <td>{{ $users->phone }}</td>
+                                    <td>{{ $users->address }} / {{ $users->city }} / {{ $users->country }} / {{ $users->post_code }}</td>
                                     <td>
                                         {!! Form::open(['route' => ['users.destroy', $users->id], 'method' => 'delete'])
                                         !!}
