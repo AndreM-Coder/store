@@ -52,9 +52,12 @@ php artisan serve
 </pre>
 
 - Login
+<pre>
 user@user.com
 passwd:123456789
+</pre>
 
+<pre>
 admin@admin.com
 passwd:admin
-
+</pre>
