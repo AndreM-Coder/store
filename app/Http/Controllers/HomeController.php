@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function landingpage()
     {   
         $pictures = Pictures::where('type', 1)->count();
-        return view('welcome', compact('pictures'));
+        return view('frontend.welcome', compact('pictures'));
     }
 
     /**
@@ -39,7 +39,7 @@ class HomeController extends Controller
         $user = Auth::User();
         $images = Image::get();
         
-        return view('home', compact('images', 'user'));
+        return view('frontend.home', compact('images', 'user'));
     }
     public function admin()
     {

@@ -174,7 +174,7 @@
           @if (Auth::check())
           <li class="get-started"><a href="{{url('home')}}">Dashboard</a></li>
           @else
-          <li class="get-started"><a href="login">Login</a></li>
+          <li class="get-started"><a href="{{route('login')}}">Login</a></li>
           <li class="get-started"><a href="register">Register</a></li>
           @endif
 
@@ -189,9 +189,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">Create your memes with WebStore</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">A meme generator where users create their own personalize images
-            easily. </h2>
+          <h1 data-aos="fade-up">Purchase your favorite products with WebStore</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">A WebStore where user can purchase all they want!! without paying almost nothing!! </h2>
           <div data-aos="fade-up" data-aos-delay="800">
             <a href="{{url('home')}}" class="btn-get-started scrollto">Get Started</a>
           </div>
@@ -259,10 +258,7 @@
 
         <div class="row">
 
-   
-
         </div>
-
       </div>
     </section>
 

@@ -15,9 +15,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.welcome');
 });
 
+
+Route::prefix('admin')->name('admin.')->namespace('Admin')->middleware('is_admin')->group(function () {
+ 
+
+});
+
+Route::group(['middleware' => ['auth', 'verified'], 'namespace' => 'User'], function () {
+
+  
+});
+  
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -31,10 +42,8 @@ Route::get('admin/home', 'HomeController@admin')->middleware(['is_admin', 'auth'
 Route::resource('users', 'UsersController')->middleware(['is_admin', 'auth']);
 
 
+
 Route::resource('products', 'ProductsController');
-
 Route::resource('shoppings', 'ShoppingController');
-
 Route::resource('categories', 'CategoryController');
-
 Route::resource('carts', 'CartController');

@@ -10,13 +10,11 @@
        @include('adminlte-templates::common.errors')
        <div class="box box-primary">
            <div class="box-body">
-               <div class="row">
                    {!! Form::model($products, ['route' => ['products.update', $products->id], 'method' => 'patch']) !!}
 
                         @include('admin.products.fields')
 
                    {!! Form::close() !!}
-               </div>
            </div>
        </div>
    </div>

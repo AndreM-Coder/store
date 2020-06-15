@@ -60,7 +60,7 @@ class CategoryController extends AppBaseController
 
         Flash::success('Category saved successfully.');
 
-        return redirect(route('admin.categories.index'));
+        return view('admin.categories.index');
     }
 
     /**

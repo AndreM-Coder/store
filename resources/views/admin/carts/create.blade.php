@@ -1,22 +1,15 @@
 @extends('admin.app')
-
+@section('title', 'Create Shopping Cart')
 @section('content')
-    <section class="content-header">
-        <h1>
-            Cart
-        </h1>
-    </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
         <div class="box box-primary">
             <div class="box-body">
-                <div class="row">
                     {!! Form::open(['route' => 'carts.store']) !!}
 
                         @include('admin.carts.fields')
 
                     {!! Form::close() !!}
-                </div>
             </div>
         </div>
     </div>

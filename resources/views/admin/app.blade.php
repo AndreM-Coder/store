@@ -57,13 +57,6 @@
                 </li>
             </ul>
         </nav>
-        <!-- /.navbar -->
-
-        <!-- Left side column. contains the logo and sidebar -->
-
-        <!-- Content Wrapper. Contains page content -->
-
-
         <!-- Sidebar -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -79,7 +72,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{ Auth::user()->name}}</a>
+                 <a href="#" class="d-block">{{ Auth::user()->name}}</a> 
                     </div>
                 </div>
 
@@ -109,31 +102,75 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item has-treeview menu {{ Request::is('picture*') || Request::is( 'meme*') ? 'menu-open active' : '' }}">
+                    
+                    <li class="nav-item has-treeview menu {{ Request::is('products*') ? 'menu-open active' : '' }}">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-images"></i>
-                            <p>Memes<i class="right fas fa-angle-left"></i>
+                            <i class="nav-icon fas fa-drumstick-bite"></i>
+                            <p>Products<i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item  ">
-                                <a href="{{ route('pictures.index') }}"
-                                    class="nav-link {{ Request::is( 'pictures*') ? 'active' : '' }}">
+                                <a href="{{ route('products.index') }}"
+                                    class="nav-link {{ Request::is( 'products*') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Original Pictures</p>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item  ">
-                                <a href="{{ route('memes') }}"
-                                    class="nav-link {{ Request::is( 'meme*') ? 'active' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Meme Pictures</p>
+                                    <p>Manage Products</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
+                    
+                    <li class="nav-item has-treeview menu {{ Request::is('categories*') ? 'menu-open active' : '' }}">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-cubes"></i>
+                            <p>Product Categories<i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item ">
+                                <a href="{{ route('categories.index') }}"
+                                    class="nav-link {{ Request::is( 'categories*') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Manage Categories</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview menu {{ Request::is('shoppings*') ? 'menu-open active' : '' }}">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-search-dollar"></i>
+                            <p>Purchases<i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item  ">
+                                <a href="{{ route('shoppings.index') }}"
+                                    class="nav-link {{ Request::is( 'shoppings*') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Manage Purchases</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview menu {{ Request::is('carts*') ? 'menu-open active' : '' }}">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-shopping-cart"></i>
+                            <p>Shopping Carts<i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item  ">
+                                <a href="{{ route('carts.index') }}"
+                                    class="nav-link {{ Request::is( 'carts*') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Manage Carts</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
                 <!-- /.sidebar-menu -->
             </div>

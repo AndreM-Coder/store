@@ -1,5 +1,5 @@
 @section('css')
-@include('layouts.datatables_css')
+@include('datatables.datatables_css')
 @endsection
 @section('content')
 <section class="content">
@@ -52,7 +52,7 @@
 </section>
 @endsection
 @section('scripts')
-@include('layouts.datatables_js')
+@include('datatables.datatables_js')
 <script>
     $(document).ready( function () {
 $('#pictures-table').DataTable({

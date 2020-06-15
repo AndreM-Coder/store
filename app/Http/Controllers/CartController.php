@@ -60,7 +60,7 @@ class CartController extends AppBaseController
 
         Flash::success('Cart saved successfully.');
 
-        return redirect(route('admin.carts.index'));
+        return view('admin.carts.index', compact('cart'));
     }
 
     /**

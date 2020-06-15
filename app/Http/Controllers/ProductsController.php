@@ -60,7 +60,8 @@ class ProductsController extends AppBaseController
 
         Flash::success('Products saved successfully.');
 
-        return redirect(route('admin.products.index'));
+        return view('admin.products.index')
+        ->with('products', $products);
     }
 
     /**

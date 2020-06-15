@@ -1,4 +1,4 @@
-@extends('admin.app')
+@extends('frontend.layouts.app')
 @section('title', 'Register')
 @section('content')
 <div class="container">
