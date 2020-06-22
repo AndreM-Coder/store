@@ -38,11 +38,11 @@
                     {!! Form::text('country', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group ">
-                    {!! Form::label('contact', 'Country:') !!}
+                    {!! Form::label('contact', 'Phone Number') !!}
                     {!! Form::number('contact', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group ">
-                    {!! Form::label('password', 'Password:') !!}
+                    {!! Form::label('password', 'Password: (Minimum 8 Characters) ') !!}
                     {!! Form::text('password', null, ['class' => 'form-control']) !!}
                 </div>
                 <!-- Submit Field -->

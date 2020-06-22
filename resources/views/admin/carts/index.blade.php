@@ -1,5 +1,5 @@
 @extends('admin.app')
-
+@section('title', 'Users Shopping Carts')
 @section('content')
     <div class="content">
         <div class="clearfix"></div>

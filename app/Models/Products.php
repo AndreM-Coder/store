@@ -23,11 +23,11 @@ class Products extends Model
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
-
-
+    const CURRENCY = '<i class="fas fa-euro-sign"></i>';
 
     public $fillable = [
         'product_id',
+        'product_name',
         'category_id',
         'description',
         'price',
@@ -42,6 +42,7 @@ class Products extends Model
     protected $casts = [
         'id' => 'integer',
         'product_id' => 'integer',
+        'product_name' => 'string',
         'category_id' => 'integer',
         'description' => 'string',
         'price' => 'float',
@@ -55,11 +56,22 @@ class Products extends Model
      */
     public static $rules = [
         'product_id' => 'required',
+        'product_name' => 'required',
         'category_id' => 'required',
         'description' => 'required',
         'price' => 'required',
         'stock' => 'required'
     ];
 
+    public function category() {
+        return $this->belongsTo(Category::class, 'category_id', 'id' );
+    }
+
+    public function priceWdiscount($price, $discount) {
+        
+        $total = $price - ($price * ($discount / 100));
+        return $total;
+        
+    }
     
 }

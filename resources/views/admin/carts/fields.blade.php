@@ -8,13 +8,15 @@
 <!-- User Id Field -->
 <div class="form-group ">
     {!! Form::label('user_id', 'User Id:') !!}
-    {!! Form::number('user_id', null, ['class' => 'form-control']) !!}
+    {!! Form::select('user_id', \App\User::pluck('name', 'id') , null, ['class' => 'form-control
+    select2']) !!}
 </div>
 
 <!-- Product Id Field -->
 <div class="form-group ">
     {!! Form::label('product_id', 'Product Id:') !!}
-    {!! Form::number('product_id', null, ['class' => 'form-control']) !!}
+    {!! Form::select('product_id', \App\Models\Products::pluck('product_id', 'id') , null, ['class' => 'form-control
+    select2']) !!}
 </div>
 
 <!-- Product Amount Field -->

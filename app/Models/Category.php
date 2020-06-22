@@ -49,5 +49,8 @@ class Category extends Model
         'discount' => 'required'
     ];
 
+    public function products() {
+        return $this->hasMany(Products::class, 'id');
+    }
     
 }

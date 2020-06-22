@@ -25,7 +25,7 @@ class Shopping extends Model
     const UPDATED_AT = 'updated_at';
 
 
-
+    public $purchaseStatus = [0 => 'In Preparation', 1 => 'Shipped', 2 => 'Delivered'];
 
     public $fillable = [
         'user_id',
@@ -65,5 +65,12 @@ class Shopping extends Model
         'delivery_date' => 'required'
     ];
 
+    public function user() {
+        return $this->belongsTo(Users::class, 'user_id', 'id');
+    }
+
+    public function getStatus(){
+        return $this->purchaseStatus[$this->status];
+    }
     
 }

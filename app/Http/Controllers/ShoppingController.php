@@ -60,7 +60,7 @@ class ShoppingController extends AppBaseController
 
         Flash::success('Shopping saved successfully.');
 
-        return redirect(route('admin.shoppings.index'));
+        return redirect(url('/shoppings'));
     }
 
     /**
@@ -77,7 +77,7 @@ class ShoppingController extends AppBaseController
         if (empty($shopping)) {
             Flash::error('Shopping not found');
 
-            return redirect(route('admin.shoppings.index'));
+            return redirect(url('/shoppings'));
         }
 
         return view('admin.shoppings.show')->with('shopping', $shopping);
@@ -97,10 +97,10 @@ class ShoppingController extends AppBaseController
         if (empty($shopping)) {
             Flash::error('Shopping not found');
 
-            return redirect(route('admin.shoppings.index'));
+            return redirect(url('/shoppings'));
         }
 
-        return view('admin.shoppings.edit')->with('shopping', $shopping);
+        return view('admin.shoppings.edit', compact('shopping'));
     }
 
     /**
@@ -118,14 +118,14 @@ class ShoppingController extends AppBaseController
         if (empty($shopping)) {
             Flash::error('Shopping not found');
 
-            return redirect(route('admin.shoppings.index'));
+            return redirect(url('/shoppings'));
         }
 
         $shopping = $this->shoppingRepository->update($request->all(), $id);
 
         Flash::success('Shopping updated successfully.');
 
-        return redirect(route('admin.shoppings.index'));
+        return redirect(url('/shoppings'));
     }
 
     /**
@@ -144,13 +144,13 @@ class ShoppingController extends AppBaseController
         if (empty($shopping)) {
             Flash::error('Shopping not found');
 
-            return redirect(route('admin.shoppings.index'));
+            return redirect(url('/shoppings'));
         }
 
         $this->shoppingRepository->delete($id);
 
         Flash::success('Shopping deleted successfully.');
 
-        return redirect(route('admin.shoppings.index'));
+        return redirect()->back();
     }
 }

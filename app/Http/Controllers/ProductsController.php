@@ -60,8 +60,7 @@ class ProductsController extends AppBaseController
 
         Flash::success('Products saved successfully.');
 
-        return view('admin.products.index')
-        ->with('products', $products);
+        return redirect(url('/products'));
     }
 
     /**
@@ -78,7 +77,7 @@ class ProductsController extends AppBaseController
         if (empty($products)) {
             Flash::error('Products not found');
 
-            return redirect(route('admin.products.index'));
+            return redirect(url('/products'));
         }
 
         return view('admin.products.show')->with('products', $products);
@@ -98,7 +97,7 @@ class ProductsController extends AppBaseController
         if (empty($products)) {
             Flash::error('Products not found');
 
-            return redirect(route('admin.products.index'));
+            return redirect(url('/products'));
         }
 
         return view('admin.products.edit')->with('products', $products);
@@ -119,14 +118,14 @@ class ProductsController extends AppBaseController
         if (empty($products)) {
             Flash::error('Products not found');
 
-            return redirect(route('admin.products.index'));
+            return redirect(url('/products'));
         }
 
         $products = $this->productsRepository->update($request->all(), $id);
 
         Flash::success('Products updated successfully.');
 
-        return redirect(route('admin.products.index'));
+        return redirect(url('/products'));
     }
 
     /**
@@ -145,13 +144,13 @@ class ProductsController extends AppBaseController
         if (empty($products)) {
             Flash::error('Products not found');
 
-            return redirect(route('admin.products.index'));
+            return redirect(url('/products'));
         }
 
         $this->productsRepository->delete($id);
 
         Flash::success('Products deleted successfully.');
 
-        return redirect(route('admin.products.index'));
+        return redirect()->back();
     }
 }

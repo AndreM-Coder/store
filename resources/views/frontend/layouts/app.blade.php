@@ -87,8 +87,8 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{url('home')}}">Create Meme</a>
-                                <a class="dropdown-item" href="{{url('home')}}">My Memes</a>
+                                <a class="dropdown-item" href="{{url('home')}}">My Account</a>
+                                <a class="dropdown-item" href="{{url('home')}}">My Products</a>
                                 @if(Auth::user()->is_admin)
                                 <a class="dropdown-item" href="{{url('admin/home')}}">Admin Panel</a>
                                 @endif

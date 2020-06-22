@@ -57,5 +57,13 @@ class Cart extends Model
         'total' => 'required'
     ];
 
+    public function user() {
+        return $this->belongsTo(Users::class, 'user_id', 'id');
+    }
+
+    public function product() {
+        return $this->belongsTo(Products::class, 'product_id', 'id');
+    }
     
+
 }

@@ -1,11 +1,7 @@
 @extends('admin.app')
+@section('title', 'Create New Product')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Products
-        </h1>
-    </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
         <div class="box box-primary">

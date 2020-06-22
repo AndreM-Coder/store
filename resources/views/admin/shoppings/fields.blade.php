@@ -8,7 +8,8 @@
 <!-- User Id Field -->
 <div class="form-group ">
     {!! Form::label('user_id', 'User Id:') !!}
-    {!! Form::number('user_id', null, ['class' => 'form-control']) !!}
+    {!! Form::select('user_id', \App\User::pluck('name', 'id') , null, ['class' => 'form-control
+    select2']) !!}
 </div>
 
 <!-- Delivery Address Field -->
@@ -32,24 +33,15 @@
 <!-- Status Field -->
 <div class="form-group ">
     {!! Form::label('status', 'Status:') !!}
-    {!! Form::number('status', null, ['class' => 'form-control']) !!}
+    {!! Form::select('status', $shopping->purchaseStatus , null, ['class' => 'form-control
+    select2']) !!}
 </div>
 
 <!-- Delivery Date Field -->
 <div class="form-group ">
     {!! Form::label('delivery_date', 'Delivery Date:') !!}
-    {!! Form::text('delivery_date', null, ['class' => 'form-control','id'=>'delivery_date']) !!}
+    {!! Form::date('delivery_date', null, ['class' => 'form-control','id'=>'delivery_date']) !!}
 </div>
-
-@push('scripts')
-    <script type="text/javascript">
-        $('#delivery_date').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: true,
-            sideBySide: true
-        })
-    </script>
-@endpush
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

@@ -7,7 +7,6 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="pull-left">Carts</h1>
                     <h1 class="pull-right">
                        <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{ route('carts.create') }}">Add New</a>
                     </h1>
@@ -17,8 +16,9 @@
     <table class="table" id="carts-table">
         <thead>
             <tr>
-                <th>User Id</th>
+                <th>User</th>
                 <th>Product Id</th>
+                <th>Product Name</th>
                 <th>Product Amount</th>
                 <th>Total</th>
                 <th>Action</th>
@@ -27,10 +27,11 @@
         <tbody>
         @foreach($carts as $cart)
             <tr>
-                <td>{{ $cart->user_id }}</td>
-            <td>{{ $cart->product_id }}</td>
-            <td>{{ $cart->product_amount }}</td>
-            <td>{{ $cart->total }}</td>
+                <td>{{ $cart->user->name }}</td>
+                <td>{{ $cart->product->product_id }}</td>
+                {{-- <td>{{ $cart->product->product_name }}</td> --}}
+                <td>{{ $cart->product_amount }}</td>
+                <td>{{ $cart->total }}</td>
                 <td>
                     {!! Form::open(['route' => ['carts.destroy', $cart->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

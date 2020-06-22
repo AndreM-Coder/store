@@ -23,21 +23,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($users as $users)
+                                @foreach($users as $user)
                                 <tr>
-                                    <td>{{ $users->name }}</td>
-                                    <td>{{ $users->isAdmin() }}</td>
-                                    <td>{{ $users->email }}</td>
-                                    <td>{{ $users->phone }}</td>
-                                    <td>{{ $users->address }} / {{ $users->city }} / {{ $users->country }} / {{ $users->post_code }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->isAdmin() }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->phone }}</td>
+                                    <td>{{ $user->address }} / {{ $user->city }} / {{ $user->country }} / {{ $user->post_code }}</td>
                                     <td>
-                                        {!! Form::open(['route' => ['users.destroy', $users->id], 'method' => 'delete'])
+                                        {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete'])
                                         !!}
                                         <div class='btn-group'>
-                                            <a href="{{ route('users.show', [$users->id]) }}"
+                                            <a href="{{ route('users.show', [$user->id]) }}"
                                                 class='btn btn-default btn-xs'><i
                                                     class="nav-icon far fa-eye"></i></a>
-                                            <a href="{{ route('users.edit', [$users->id]) }}"
+                                            <a href="{{ route('users.edit', [$user->id]) }}"
                                                 class='btn btn-default btn-xs'><i
                                                     class="nav-icon far fa-edit"></i></a>
                                             {!! Form::button('<i class="nav-icon far fa-trash-alt"></i>', ['type' =>

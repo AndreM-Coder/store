@@ -60,7 +60,7 @@ class CartController extends AppBaseController
 
         Flash::success('Cart saved successfully.');
 
-        return view('admin.carts.index', compact('cart'));
+        return redirect(url('/carts'));
     }
 
     /**
@@ -77,7 +77,7 @@ class CartController extends AppBaseController
         if (empty($cart)) {
             Flash::error('Cart not found');
 
-            return redirect(route('admin.carts.index'));
+            return redirect(url('/carts'));
         }
 
         return view('admin.carts.show')->with('cart', $cart);
@@ -97,7 +97,7 @@ class CartController extends AppBaseController
         if (empty($cart)) {
             Flash::error('Cart not found');
 
-            return redirect(route('admin.carts.index'));
+            return redirect(url('/carts'));
         }
 
         return view('admin.carts.edit')->with('cart', $cart);
@@ -118,14 +118,14 @@ class CartController extends AppBaseController
         if (empty($cart)) {
             Flash::error('Cart not found');
 
-            return redirect(route('admin.carts.index'));
+            return redirect(url('/carts'));
         }
 
         $cart = $this->cartRepository->update($request->all(), $id);
 
         Flash::success('Cart updated successfully.');
 
-        return redirect(route('admin.carts.index'));
+        return redirect(url('/carts'));
     }
 
     /**
@@ -144,13 +144,13 @@ s     *
         if (empty($cart)) {
             Flash::error('Cart not found');
 
-            return redirect(route('admin.carts.index'));
+            return redirect(url('/carts'));
         }
 
         $this->cartRepository->delete($id);
 
         Flash::success('Cart deleted successfully.');
 
-        return redirect(route('admin.carts.index'));
+        return redirect(url('/carts'));
     }
 }

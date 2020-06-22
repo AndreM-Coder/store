@@ -7,7 +7,6 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="pull-left">Product Categories</h1>
                     <h1 class="pull-right">
                        <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{ route('categories.create') }}">Add New</a>
                     </h1>
@@ -26,7 +25,7 @@
         @foreach($categories as $category)
             <tr>
                 <td>{{ $category->name }}</td>
-            <td>{{ $category->discount }}</td>
+            <td>{{ $category->discount }} %</td>
                 <td>
                     {!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

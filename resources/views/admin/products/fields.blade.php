@@ -8,14 +8,19 @@
             <div class="card-body">
 <!-- Product Id Field -->
 <div class="form-group ">
-    {!! Form::label('product_id', 'Product Id:') !!}
+    {!! Form::label('product_id', 'Product ID code:') !!}
     {!! Form::number('product_id', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group ">
+    {!! Form::label('product_name', 'Product Name:') !!}
+    {!! Form::text('product_name', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group ">
-    {!! Form::label('category_id', 'Category Id:') !!}
-    {!! Form::number('category_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('category_id', 'Category:') !!}
+    {!! Form::select('category_id', \App\Models\Category::pluck('name', 'id'), 1, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Description Field -->

@@ -7,7 +7,6 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="pull-left">Purchases</h1>
                     <h1 class="pull-right">
                        <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{ route('shoppings.create') }}">Add New</a>
                     </h1>
@@ -17,23 +16,23 @@
     <table class="table" id="shoppings-table">
         <thead>
             <tr>
-                <th>User Id</th>
-        <th>Delivery Address</th>
-        <th>Total</th>
-        <th>Products Qty</th>
-        <th>Status</th>
-        <th>Delivery Date</th>
+                <th>User</th>
+                <th>Delivery Address</th>
+                <th>Total</th>
+                <th>Products Qty</th>
+                <th>Status</th>
+                <th>Delivery Date</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
         @foreach($shoppings as $shopping)
             <tr>
-                <td>{{ $shopping->user_id }}</td>
+                <td>{{ $shopping->user->name }}</td>
             <td>{{ $shopping->delivery_address }}</td>
-            <td>{{ $shopping->total }}</td>
+            <td>{{ $shopping->total }} {!! App\Models\Products::CURRENCY!!}</td>
             <td>{{ $shopping->products_qty }}</td>
-            <td>{{ $shopping->status }}</td>
+            <td>{{ $shopping->getStatus() }}</td>
             <td>{{ $shopping->delivery_date }}</td>
                 <td>
                     {!! Form::open(['route' => ['shoppings.destroy', $shopping->id], 'method' => 'delete']) !!}
