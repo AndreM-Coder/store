@@ -6,6 +6,8 @@ use App\Http\Requests\CreateProductsRequest;
 use App\Http\Requests\UpdateProductsRequest;
 use App\Repositories\ProductsRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Products;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -35,6 +37,13 @@ class ProductsController extends AppBaseController
             ->with('products', $products);
     }
 
+    public function main(Request $request)
+    {
+        $products = $this->productsRepository->all();
+
+        return view('frontend.products', compact('products'));
+    }
+
     /**
      * Show the form for creating a new Products.
      *
@@ -52,11 +61,35 @@ class ProductsController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateProductsRequest $request)
-    {
-        $input = $request->all();
+    public function store(Request $request)
+    {   
 
-        $products = $this->productsRepository->create($input);
+        $input = $request->all();
+        
+        $validator = Validator::make($request->all(), [
+            'product_image' => 'required|mimes:jpeg,png,jpg,webp|max:1000|dimensions:max-width=1000px,max-height=1500px',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', $validator->messages()->first());
+        }
+        
+        $image = $request->product_image;
+        $image_name = time() . rand(1, 1000) . '.' . $image->extension();
+       $path = 'uploads/images/';
+
+        $image->move(public_path($path), $image_name);
+
+        
+        $model = Products::create([
+            'product_id' => $request->product_id,
+            'product_name' => $request->product_name,
+            'category_id' => $request->category_id,
+            'price' => $request->price,
+            'product_image' => $path . $image_name,
+            'stock' => $request->stock,
+            'description' => $request->description,
+        ]);
 
         Flash::success('Products saved successfully.');
 
@@ -114,15 +147,59 @@ class ProductsController extends AppBaseController
     public function update($id, UpdateProductsRequest $request)
     {
         $products = $this->productsRepository->find($id);
-
+        
         if (empty($products)) {
-            Flash::error('Products not found');
+            Flash::error('Product not found');
 
-            return redirect(url('/products'));
+            return redirect(route('admin.lotteries.index'));
         }
 
-        $products = $this->productsRepository->update($request->all(), $id);
+        $validator = Validator::make($request->all(), [
+            'product_image' => 'required|mimes:jpeg,png,jpg,webp|max:1000|dimensions:max-width=1000px,max-height=1500px',            
 
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', $validator->messages()->first());
+        }
+
+        $model = Products::find($id);
+
+        if (!$model) {
+            return redirect()->back()->with('error', 'You put an invalid id');
+        }
+
+        $path = 'uploads/images/';
+
+        if ($request->product_image ?: null) {
+            if (file_exists($model->product_image))
+                unlink($model->product_image);
+            $image = $request->product_image;
+            $image_name = time() . rand(1, 1000) . '.' . $image->extension();
+            $image->move(public_path($path), $image_name);
+        }
+
+        if ($request->product_image) {
+            $model = $model->update([
+                'product_id' => $request->product_id,
+                'product_name' => $request->product_name,
+                'category_id' => $request->category_id,
+                'price' => $request->price,
+                'product_image' => $path . $image_name,
+                'stock' => $request->stock,
+                'description' => $request->description,
+            ]);
+        } else {
+            $model = $model->update([
+                'product_id' => $request->product_id,
+            'product_name' => $request->product_name,
+            'category_id' => $request->category_id,
+            'price' => $request->price,
+            'stock' => $request->stock,
+            'description' => $request->description,
+            ]);
+
+        }
         Flash::success('Products updated successfully.');
 
         return redirect(url('/products'));

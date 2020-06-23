@@ -6,7 +6,11 @@
         @include('adminlte-templates::common.errors')
         <div class="box box-primary">
             <div class="box-body">
-                    {!! Form::open(['route' => 'products.store']) !!}
+                    {!! Form::open(['route' => 'products.store','files'=>'true']) !!}
+                        @php
+                            $products = new App\Models\Products;
+                            $edit = 0;
+                        @endphp
 
                         @include('admin.products.fields')
 

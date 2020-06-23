@@ -27,7 +27,8 @@ class HomeController extends Controller
 
     public function landingpage()
     {   
-        return view('frontend.welcome');
+        $products = Products::get();
+        return view('frontend.welcome', compact('products'));
     }
 
     /**
@@ -38,11 +39,21 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::User();
-        $products = Products::where('stock' >= 1);
+        $products = Products::get();
         $categories = Category::all();
         
         return view('frontend.welcome', compact('products', 'categories' ,'user'));
     }
+
+    public function about() 
+    {
+        return view('frontend.about');
+    }
+
+    public function contact() {
+        return view('frontend.contact');
+    }
+
     public function admin()
     {
         $totalUsers = Users::all()->count();

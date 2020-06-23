@@ -42,7 +42,6 @@
                 <td>
                     {!! Form::open(['route' => ['products.destroy', $product->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('products.show', [$product->id]) }}" class='btn btn-default btn-xs'><i class="nav-icon far fa-eye"></i></a>
                         <a href="{{ route('products.edit', [$product->id]) }}" class='btn btn-default btn-xs'><i class="nav-icon far fa-edit"></i></a>
                         {!! Form::button('<i class="nav-icon far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>

@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('upload-image', 'HomeController@upload')->name('upload-image');
 
+Route::get('/view-products', 'ProductsController@main');
+Route::get('/view-single-product', 'ProductsController@singleMain');
+
 Auth::routes();
 Route::get('users/today', 'UsersController@users_today')->middleware(['is_admin', 'auth'])->name('users-today');
 Route::resource('pictures', 'PicturesController')->middleware(['is_admin', 'auth']);
@@ -31,6 +34,8 @@ Route::resource('users', 'UsersController')->middleware(['is_admin', 'auth']);
 
 
 
+Route::get('about', 'HomeController@about')->name('about');
+Route::get('contact', 'HomeController@contact')->name('contact');
 Route::resource('products', 'ProductsController')->middleware(['is_admin', 'auth']);
 Route::resource('shoppings', 'ShoppingController')->middleware(['is_admin', 'auth']);;
 Route::resource('categories', 'CategoryController')->middleware(['is_admin', 'auth']);;

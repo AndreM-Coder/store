@@ -31,7 +31,8 @@ class Products extends Model
         'category_id',
         'description',
         'price',
-        'stock'
+        'stock',
+        'product_image'
     ];
 
     /**
@@ -46,7 +47,8 @@ class Products extends Model
         'category_id' => 'integer',
         'description' => 'string',
         'price' => 'float',
-        'stock' => 'integer'
+        'stock' => 'integer',
+        'product_image' => 'string',
     ];
 
     /**
@@ -60,7 +62,7 @@ class Products extends Model
         'category_id' => 'required',
         'description' => 'required',
         'price' => 'required',
-        'stock' => 'required'
+        'stock' => 'required',
     ];
 
     public function category() {

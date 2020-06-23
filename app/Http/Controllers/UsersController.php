@@ -74,6 +74,11 @@ class UsersController extends AppBaseController
                 'name' => $request['name'],
                 'email' => $request['email'],
                 'is_admin' => $request['is_admin'],
+                'address' => $request['address'],
+                'city' => $request['city'],
+                'contry' => $request['country'],
+                'post_code' => $request['post_code'],
+                'phone' => $request['phone'],
                 'password' => Hash::make($request['password']),
             ]);
         }

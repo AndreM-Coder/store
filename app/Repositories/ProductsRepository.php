@@ -21,7 +21,8 @@ class ProductsRepository extends BaseRepository
         'category_id',
         'description',
         'price',
-        'stock'
+        'stock',
+        'product_image'
     ];
 
     /**
