@@ -3,7 +3,7 @@
 <br>
 Este projeto tem como principal objetivo permitir a um certo utilizador comprar produtos da Liquor Store, uma loja que vende todo e qualquer tipo de Bebidas Licorosas.
 
-                Do lado do administrador(back-end):
+-> Do lado do administrador(back-end):
 Criar produtos, 
 Editar produtos, 
 Gerir Utilizadores,
@@ -12,7 +12,8 @@ Gerir categorias de produtos com percentagens de desconto,
 Gerir pagamentos com varias plataformas, por exemplo PayPal, (não concluido)
 Log-in, 
  
-                Sendo que do lado do utilizador(front-end):
+-> Sendo que do lado do utilizador(front-end):
+
 Log-in; 
 Registo de cliente;
 Produtos disponiveis;
