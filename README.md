@@ -1,12 +1,15 @@
 # Projeto Web Store
 <b>Descrição do Projeto:</b>
 <br>
-Este projeto tem como principal objetivo permitir a um certo utilizador comprar produtos da Website Store, uma loja que vende todo e qualquer tipo de produtos.
+Este projeto tem como principal objetivo permitir a um certo utilizador comprar produtos da Liquor Store, uma loja que vende todo e qualquer tipo de Bebidas Licorosas.
+
+
+
 Estes produtos podem ser adicionados pelo administrador da loja, desde que tem de cumpra todos os requistos obrigatorios do produto.
 Ao administrador cabe ainda tambem a gestão de utilizadores
 
 
-<b><h3>Etapas para aceder ao projeto numa máquina local por pessoa:</h3></b>
+<b><h3>Etapas para aceder ao projeto numa máquina local:</h3></b>
 
 Instalar Script do Projeto:
 
