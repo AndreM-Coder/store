@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Image;
 use App\Models\Pictures;
+use App\Models\Products;
 use App\Models\Users;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -25,8 +27,7 @@ class HomeController extends Controller
 
     public function landingpage()
     {   
-        $pictures = Pictures::where('type', 1)->count();
-        return view('frontend.welcome', compact('pictures'));
+        return view('frontend.welcome');
     }
 
     /**
@@ -37,9 +38,10 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::User();
-        $images = Image::get();
+        $products = Products::where('stock' >= 1);
+        $categories = Category::all();
         
-        return view('frontend.home', compact('images', 'user'));
+        return view('frontend.welcome', compact('products', 'categories' ,'user'));
     }
     public function admin()
     {

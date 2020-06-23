@@ -42,21 +42,12 @@
 					
 		        	<p class="mb-0">
 						
-								<a class="mr-2" href="{{url('home')}}">My Account</a>
-                                <a class="mr-2" href="{{url('home')}}">My Products</a>
-                                @if(Auth::user()->is_admin)
-                                <a class="mr-2" href="{{url('admin/home')}}">Admin Panel</a>
-                                @endif
-                                <a class="mr-2ss" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-								</form>
-								<a href="#" class="mr-2">Sign Up</a> <a href="#">Log In</a></p>
+						@if (Auth::check())
+						<a class="mr-2" href="{{url('home')}}">Dashboard</a>
+						@else
+						<a class="mr-2" href="{{route('login')}}">Login</a>
+						<a class="mr-2" href="register">Register</a>
+						@endif
 		        </div>
 					</div>
 				</div>
