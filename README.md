@@ -3,10 +3,34 @@
 <br>
 Este projeto tem como principal objetivo permitir a um certo utilizador comprar produtos da Liquor Store, uma loja que vende todo e qualquer tipo de Bebidas Licorosas.
 
-
+                Do lado do administrador(back-end):
+Criar produtos, 
+Editar produtos, 
+Gerir Utilizadores,
+Gerir Carrinhos de compras, (incompleto)
+Gerir categorias de produtos com percentagens de desconto,
+Gerir pagamentos com varias plataformas, por exemplo PayPal, (não concluido)
+Log-in, 
+ 
+                Sendo que do lado do utilizador(front-end):
+Log-in; 
+Registo de cliente;
+Produtos disponiveis;
+Carrinho de compras;(incompleto)
+Edição dos campos do perfil de utilizador;(nao concluido)
+                
+De uma forma global fazer com que a aplicação:
+Tenha um layout responsivo;
+A usabilidade do sistema, ser intuitivo e pratico;
+Um numero reduzido de etapas para a conclusão das compras;(não conlcuido)
+Ser seguro, irei tentar implementar um sistema de autenticação de 2 fatores para compras a partir de um determinado valor;(nao concluido)
+ 
 
 Estes produtos podem ser adicionados pelo administrador da loja, desde que tem de cumpra todos os requistos obrigatorios do produto.
 Ao administrador cabe ainda tambem a gestão de utilizadores
+
+
+!!Para visitar a area de administrador, fazer login com o admin e ir a dashboard, no canto superior direito da pagina home.!!
 
 
 <b><h3>Etapas para aceder ao projeto numa máquina local:</h3></b>
