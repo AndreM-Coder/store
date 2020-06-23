@@ -276,6 +276,9 @@
 				</div>
 			</div>
 			<div class="row">
+				@php
+				$products = \App\Models\Products::get();
+				@endphp
 				@foreach($products as $product)
 				<div class="col-md-4 d-flex">
 					<div class="product ftco-animate">
@@ -296,12 +299,13 @@
 							<span class="sale">Sale</span>
 							<span class="category">{{$product->category->name}}</span>
 						<h2>{{$product->product_name}}</h2>
-							<p class="mb-0"><span class="price price-sale">$69.00</span> <span
-									class="price">{{$product->price}}</span></p>
+							<p class="mb-0"><span class="price price-sale">69.00 e</span> 
+								<span class="price">{{$product->price}} e</span></p>
 						</div>
 					</div>
 				</div>
 				@endforeach
+				{!! App\Models\Products::CURRENCY!!}
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-4">

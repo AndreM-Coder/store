@@ -48,7 +48,7 @@
                                 <!-- small box -->
                                 <div class="small-box bg-blue">
                                     <div class="inner">
-                                        <h3>{{$totalImages}}</h3>
+                                        <h3>{{$totalCategories}}</h3>
                                         <p>Total Pictures</p>
                                     </div>
                                     <div class="icon">
@@ -62,8 +62,8 @@
                                 <!-- small box -->
                                 <div class="small-box bg-blue">
                                     <div class="inner">
-                                        <h3>{{$totalMemes}}</h3>
-                                        <p>Total Memes</p>
+                                        <h3>{{$totalProducts}}</h3>
+                                        <p>Total Products</p>
                                     </div>
                                     <div class="icon">
                                         <i class="far fa-images"></i>

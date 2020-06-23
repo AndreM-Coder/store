@@ -58,9 +58,9 @@ class HomeController extends Controller
     {
         $totalUsers = Users::all()->count();
         $todayUsers = Users::whereDate('created_at', Carbon::now())->count();
-        $totalImages = Pictures::all()->count();
-        $totalMemes = Pictures::where('type', 1)->count();
-        return view('admin.dashboard', compact('totalUsers', 'todayUsers', 'totalImages', 'totalMemes'));
+        $totalCategories = Category::all()->count();
+        $totalProducts = Products::count();
+        return view('admin.dashboard', compact('totalUsers', 'todayUsers', 'totalCategories', 'totalProducts'));
     }
 
     public function upload(Request $request)

@@ -60,7 +60,7 @@
         <!-- Sidebar -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="{{asset('/')}}" class="brand-link">
+            <a href="{{asset('home')}}" class="brand-link">
                 <span class="brand-text font-weight-light ml-4">Liquor Store </span>
             </a>
             <!-- Sidebar -->
